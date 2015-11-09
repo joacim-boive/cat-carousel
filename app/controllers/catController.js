@@ -1,6 +1,6 @@
 (function () {
 
-    var ListController = function ($rootScope, $scope, $http) {
+    var CatController = function ($rootScope, $scope, $http) {
         var counter = 0;
         $scope.picture = {};
         $scope.picture.even = {};
@@ -26,7 +26,7 @@
                         counter++;
                     },
                     function errorCallback(response) {
-                        debugger
+                        $scope.errorMessage = 'No cats today';
                     });
         };
 
@@ -34,8 +34,8 @@
         $rootScope.getNewImage = true;
     };
 
-    ListController.$inject = ['$rootScope','$scope', '$http'];
+    CatController.$inject = ['$rootScope','$scope', '$http'];
 
-    angular.module('catsApp')
-        .controller('ListController', ListController);
+    angular.module('app')
+        .controller('CatController', CatController);
 }());

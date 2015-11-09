@@ -64,6 +64,6 @@
 
     animate.$inject = ['$rootScope', '$timeout'];
 
-    angular.module('catsApp')
+    angular.module('app')
         .directive('animate', animate);
 }());
